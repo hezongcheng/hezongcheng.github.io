@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>conda 多版本运行环境解决方法</title>
+    <link href="/2024/03/08/conda-%E5%A4%9A%E7%89%88%E6%9C%AC%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <url>/2024/03/08/conda-%E5%A4%9A%E7%89%88%E6%9C%AC%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h3 id="查看所有环境"><a href="#查看所有环境" class="headerlink" title="查看所有环境"></a>查看所有环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda info --envs<br></code></pre></td></tr></table></figure><h3 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name python-3.10.6 python=3.10.6<br></code></pre></td></tr></table></figure><h3 id="激活环境"><a href="#激活环境" class="headerlink" title="激活环境"></a>激活环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate python-3.10.6<br></code></pre></td></tr></table></figure><h3 id="退出环境"><a href="#退出环境" class="headerlink" title="退出环境"></a>退出环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><h3 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name python-3.10.6 --all<br></code></pre></td></tr></table></figure><h3 id="当前环境信息"><a href="#当前环境信息" class="headerlink" title="当前环境信息"></a>当前环境信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda info -e<br></code></pre></td></tr></table></figure><h3 id="列出包"><a href="#列出包" class="headerlink" title="列出包"></a>列出包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><h3 id="下载包-numpy"><a href="#下载包-numpy" class="headerlink" title="下载包 numpy"></a>下载包 numpy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><h3 id="删除包-numpy"><a href="#删除包-numpy" class="headerlink" title="删除包 numpy"></a>删除包 numpy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>conda create和install的包名请参考[(<a href="https://anaconda.org/)]">https://anaconda.org/)]</a></p><p>建议pip仅在conda不能用的时候才使用. 因为conda的包管理与版本控制更严格, 更不容易出现依赖冲突</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>conda</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Dockerfile中apt下载过慢，更换构建容器的软件源</title>
+    <link href="/2024/02/22/Dockerfile%E4%B8%ADapt%E4%B8%8B%E8%BD%BD%E8%BF%87%E6%85%A2%EF%BC%8C%E6%9B%B4%E6%8D%A2%E6%9E%84%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%BA%90/"/>
+    <url>/2024/02/22/Dockerfile%E4%B8%ADapt%E4%B8%8B%E8%BD%BD%E8%BF%87%E6%85%A2%EF%BC%8C%E6%9B%B4%E6%8D%A2%E6%9E%84%E5%BB%BA%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%BA%90/</url>
+    
+    <content type="html"><![CDATA[<h3 id="访问清华源网站-https-mirrors-tuna-tsinghua-edu-cn-help-系统名称"><a href="#访问清华源网站-https-mirrors-tuna-tsinghua-edu-cn-help-系统名称" class="headerlink" title="访问清华源网站[https://mirrors.tuna.tsinghua.edu.cn/help/系统名称/]"></a>访问清华源网站[<a href="https://mirrors.tuna.tsinghua.edu.cn/help/%E7%B3%BB%E7%BB%9F%E5%90%8D%E7%A7%B0/]">https://mirrors.tuna.tsinghua.edu.cn/help/系统名称/]</a></h3><p>找到  <strong>手动替换</strong> 的内容复制到Dockerfile目录的 <strong>sources.list</strong> 中</p><h3 id="在Dockerfile中apt-update之前使用"><a href="#在Dockerfile中apt-update之前使用" class="headerlink" title="在Dockerfile中apt-update之前使用"></a>在Dockerfile中apt-update之前使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ADD sources.list /etc/apt/<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>docker</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>vite项目配置</title>
+    <link href="/2024/02/21/vite%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/"/>
+    <url>/2024/02/21/vite%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<p>以下是一个vite项目配置本地代理，修改文件引入路径的示例代码：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; defineConfig &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span><br><span class="hljs-keyword">import</span> uni <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@dcloudio/vite-plugin-uni&#x27;</span><br><span class="hljs-keyword">import</span> &#123; resolve &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;path&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">plugins</span>: [<br>    <span class="hljs-title function_">uni</span>(),<br>  ],<br>  <span class="hljs-attr">resolve</span>: &#123;<br>    <span class="hljs-attr">alias</span>: &#123;<br>      <span class="hljs-string">&quot;@&quot;</span>: <span class="hljs-title function_">resolve</span>(__dirname, <span class="hljs-string">&quot;./src&quot;</span>),<br>    &#125;,<br>  &#125;,<br>  <span class="hljs-attr">base</span>: <span class="hljs-string">&quot;./&quot;</span>,<br>  <span class="hljs-attr">server</span>: &#123;<br>    <span class="hljs-attr">host</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,<br>    <span class="hljs-attr">https</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">port</span>: <span class="hljs-number">8666</span>,<br>    <span class="hljs-attr">open</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">cors</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">proxy</span>: &#123;<br>      <span class="hljs-string">&quot;/api&quot;</span>: &#123;<br>        <span class="hljs-attr">target</span>: <span class="hljs-string">&quot;http://192.168.2.93:8667/api&quot;</span>,<br>        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-attr">rewrite</span>: <span class="hljs-function">(<span class="hljs-params">path</span>) =&gt;</span> path.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^\/api/</span>, <span class="hljs-string">&quot;&quot;</span>),<br>      &#125;,<br>    &#125;,<br>  &#125;,<br>  <span class="hljs-comment">// 打包配置</span><br>  <span class="hljs-attr">build</span>: &#123;<br>    <span class="hljs-attr">target</span>: <span class="hljs-string">&quot;modules&quot;</span>,<br>    <span class="hljs-attr">outDir</span>: <span class="hljs-string">&quot;dist&quot;</span>, <br>    <span class="hljs-attr">assetsDir</span>: <span class="hljs-string">&quot;assets&quot;</span>,<br>    <span class="hljs-attr">minify</span>: <span class="hljs-string">&quot;terser&quot;</span>,<br>  &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure><h3 id="resolve"><a href="#resolve" class="headerlink" title="resolve"></a>resolve</h3><p>resolve属性用于配置文件引入路径的解析规则。通过设置resolve.alias属性，可以指定文件引入路径的别名。例如，设置”@”为src目录的别名，这样在引入文件时，可以使用”@&#x2F;xxx”的方式来代替”src&#x2F;xxx”。</p><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><p>server属性用于配置开发服务器的相关选项。通过设置server.host属性，可以指定开发服务器的IP地址。通过设置server.port属性，可以指定开发服务器的端口号。通过设置server.open属性，可以指定是否自动打开浏览器访问开发服务器。通过设置server.cors属性，可以指定是否允许跨域请求。通过设置server.proxy属性，可以指定代理规则，用于将请求转发到指定的目标服务器。</p><h3 id="build"><a href="#build" class="headerlink" title="build"></a>build</h3><p>build属性用于配置打包的相关选项。通过设置build.target属性，可以指定打包后的目标环境。通过设置build.outDir属性，可以指定打包后的输出目录。通过设置build.assetsDir属性，可以指定打包后的静态资源目录。通过设置build.minify属性，可以指定打包后的代码是否进行压缩。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>vite</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>php配置上传文件大小</title>
+    <link href="/2024/02/21/php%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/"/>
+    <url>/2024/02/21/php%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</url>
+    
+    <content type="html"><![CDATA[<p>在PHP中，可以通过修改配置文件或者使用ini_set函数来设置上传文件的大小限制。</p><h3 id="修改配置文件（php-ini）："><a href="#修改配置文件（php-ini）：" class="headerlink" title="修改配置文件（php.ini）："></a>修改配置文件（php.ini）：</h3><p>打开php.ini文件并查找”upload_max_filesize”和”post_max_size”这两行，分别表示单个文件最大上传大小和POST数据的最大大小。将其值更改为所需的大小限制，如”20M”表示20MB。保存文件后重新加载服务器。</p><h3 id="使用ini-set函数："><a href="#使用ini-set函数：" class="headerlink" title="使用ini_set函数："></a>使用ini_set函数：</h3><p>ini_set函数可以动态地修改PHP运行时的配置选项。下面是一段示例代码，展示了如何使用该函数来设置上传文件大小限制：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-title function_ invoke__">ini_set</span>(<span class="hljs-string">&#x27;upload_max_filesize&#x27;</span>, <span class="hljs-string">&#x27;50M&#x27;</span>);<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>PHP</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>这是我的第一篇博客文章</title>
+    <link href="/2024/02/20/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
+    <url>/2024/02/20/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    
+    <content type="html"><![CDATA[<h3 id="这是一条命令"><a href="#这是一条命令" class="headerlink" title="这是一条命令"></a>这是一条命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> -rf<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>其他</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
